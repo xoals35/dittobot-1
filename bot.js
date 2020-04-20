@@ -32,7 +32,10 @@ readdirSync("./commands/").forEach(dir => {
 	};
 });
 
-process.on('unhandledRejection', console.error).on("uncaughtException", console.error).on('warning', console.warn).on('exit', console.log);
+process.on('unhandledRejection', console.error)
+.on("uncaughtException", console.error)
+.on('warning', console.warn)
+.on('exit', console.log);
 
 client.login();
 
