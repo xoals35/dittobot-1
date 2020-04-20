@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title><%= username %></title>
+    <link rel="stylesheet" href="./index.css">
+    <link rel="shotcut icon" href="<%= displayAvatarURL %>">
+    <meta property="og:title" content="<%= username %>">
+    <meta property="og:description" content="<%= username %>">
+    <meta property="og:image" content="<%= displayAvatarURL %>">
+</head>
+
+<body>
+    <div class="main">
+        <div class="title"><%= username %></div>
+        <%= username %>은 현재 <%= guild %>개의 서버, <%= user %>명의 유저들과 함께하고 있습니다.
+        <div class="buttons">
+            <button type="button" class="link" id="api_link">API</button>
+            <button type="button" class="link" id="invite_link">INVITE</button>
+        </div>
+        <div class="botinfo">
+            <div class="botinfo-title"><%= username %> 정보</div>
+            <div class="bot-info">
+                Username: <%= username %><br>
+                ID: <%= id %><br>
+                Ping: <%= ping %>ms
+            </div>
+        </div>
+    </div>
+
+    <script type="text/javascript" src="./js/index.js"></script>
+</body>
+
+</html>

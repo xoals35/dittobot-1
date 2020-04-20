@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title><%= username %> 초대</title>
+    <link rel="stylesheet" href="./invite.css">
+    <link rel="shotcut icon" href="<%= displayAvatarURL %>">
+    <meta property="og:title" content="<%= username %> 초대">
+    <meta property="og:description" content="<%= username %> 초대링크">
+    <meta property="og:image" content="<%= displayAvatarURL %>">
+</head>
+
+<body>
+    <div class="main">
+        <div class="title"><%= username %> 초대</div>
+        <div class="buttons">
+            <button class="basic invite-button" type="button">BASIC</button>
+            <button class="admin invite-button" type="button">ADMIN</button>
+        </div>
+    </div>
+
+    <script type="text/javascript">
+        document.getElementsByClassName('basic')[0].addEventListener('click', (event) => {
+            const basicInvite = window.open('https://discordapp.com/api/oauth2/authorize?client_id=<%= id %>&permissions=37092416&scope=bot', '_blank')
+            basicInvite.focus()
+        })
+        
+        document.getElementsByClassName('admin')[0].addEventListener('click', (event) => {
+            const basicInvite = window.open('https://discordapp.com/api/oauth2/authorize?client_id=<%= id %>&permissions=8&scope=bot', '_blank')
+            basicInvite.focus()
+        })
+    </script>
+    <script type="text/javascript" src="./js/invite.js"></script>
+</body>
+
+</html>
