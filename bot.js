@@ -51,7 +51,7 @@ client.on("ready", () => {
 	require('./api').run(client)
 })
 .on("message", async message => {
-	if (message.author.bot || message.system || !message.content.startsWith('디토야 ')) return;
+	if (message.author.bot || message.system || !message.content.startsWith(process.env.PREFIX)) return;
 
 	if (message.channel.type === 'dm' && message.author.id !== process.env.OWNER_ID) {
 		message.channel.send(`DM에서는 ${client.user.username}을(를) 사용하실 수 없습니다.\n${client.user.username}이(가) 있는 서버에서 사용해 주세요.`)
@@ -62,14 +62,14 @@ client.on("ready", () => {
 
 	if (!message.guild.me.hasPermission('EMBED_LINKS')) return message.channel.send(`${client.user.username}을(를) 원활하게 이용하실려면 **EMBED_LINKS**(링크 보내기) 권한이 필요합니다!`)
 
-	const args = message.content.slice('디토야 '.length).trim().split(/ +/g);
+	const args = message.content.slice(process.env.PREFIX.length).trim().split(/ +/g);
 	const cmd = args.shift().toLowerCase();
 	const command = client.commands.get(cmd) || client.commands.get(client.aliases.get(cmd));
 
 	try {
 		let ops = {
 			ownerID: process.env.OWNER_ID,
-			prefix: '디토야 '
+			prefix: process.env.PREFIX
 		};
 
 		if (command) {

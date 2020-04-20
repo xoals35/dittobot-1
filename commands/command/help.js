@@ -8,9 +8,9 @@ module.exports = {
     usage: "[command | alias]",
     description: 'help command',
     run: async (client, message, args, ops) => {
-        return message.channel.send('도움말 망했습니다')
+        return message.channel.send('도움말 망했습니다...')
         
-        if (args[0]) {
+        if (args.join(' ')) {
             const embed = new MessageEmbed();
         
             const cmd = client.commands.get(args.join(" ").toLowerCase()) || client.commands.get(client.aliases.get(args.join(" ").toLowerCase()));
@@ -35,10 +35,10 @@ module.exports = {
             const commandEmbed = new MessageEmbed().setColor(0x00ffff).setTitle(`${client.user.username} 명령어`).setFooter(`${ops.prefix} 도움 <명령어 이름> 으로 더 자세히 아실 수 있습니다.`, client.user.displayAvatarURL());
         
             const commands = (category) => {
-                return client.commands.filter(cmd => cmd.category === category).map(cmd => cmd.name).join(", ");
+                return client.commands.filter(cmd => cmd.category === category).map(cmd => `\`${cmd.name}\``).join(", ");
             };
         
-            const info = client.categories.filter(n => n !== "owner").map(cat => stripIndents`**${cat[0].toLowerCase() + cat.slice(1)}** \n${commands(cat)}`).reduce((string, category) => string + "\n\n" + category);
+            const info = client.categories.filter(n => n !== "owner").map(cat => stripIndents`**${cat[0].toLowerCase() + cat.slice(1)}**\n${commands(cat)}`).reduce((string, category) => string + "\n\n" + category);
 
             message.channel.send(commandEmbed.setDescription(info));
         };
