@@ -1,7 +1,6 @@
-* {
-    padding: 0;
-    margin: 0;
-    border: 0;
+@import "reset.css";
+
+body {
     outline: none;
     color: black;
     font-family: "Poppins", "Helvetica Neue", Arial, sans-serif;

@@ -10,11 +10,11 @@ module.exports = {
         app.listen(PORT, async () => {
             console.log(`Server Started... ${PORT}`)
 
-            await require('ngrok').connect({
+            /*await require('ngrok').connect({
                 proto: 'http',
                 addr: PORT,
                 authtoken: process.env.NGROK_AUTHTOKEN
-            }).then(console.log)
+            }).then(console.log)*/
         });
 
         app.set('view engine', 'ejs');
