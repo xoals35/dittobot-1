@@ -16,7 +16,7 @@ class MusicManager {
             user: client.user.id,
             shards: client.shard ? client.shard.count : 0
         });
-        this.manager.connect().then(console.log("Lavalink Connected"));
+        this.manager.connect().then(e => console.log("Lavalink Connected"));
         
         this.queue = new Collection();
     }

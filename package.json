@@ -30,6 +30,7 @@
     "moment-timezone": "^0.5.28",
     "ngrok": "^3.2.7",
     "node-fetch": "^2.6.0",
+    "nodemailer": "^6.4.6",
     "slyrics": "^0.1.42",
     "util": "^0.12.2"
   },
