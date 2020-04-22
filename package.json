@@ -19,7 +19,7 @@
     "cheerio": "^1.0.0-rc.3",
     "cheerio-httpcli": "^0.7.4",
     "common-tags": "^1.8.0",
-    "covid19-korea": "^1.0.0",
+    "covid-19-korea": "^1.0.47",
     "discord.js": "^12.2.0",
     "discord.js-lavalink": "^3.0.1",
     "dotenv": "^8.2.0",
