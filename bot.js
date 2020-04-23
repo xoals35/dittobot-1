@@ -50,8 +50,6 @@ client.on("ready", () => {
 
 	const MusicManager = require('./structures/MusicManager')
 	client.musicManager = new MusicManager(client);
-	
-	require('./api').run(client)
 })
 .on("message", async message => {
 	if (message.author.bot || message.system || !message.content.startsWith(process.env.PREFIX)) return;
