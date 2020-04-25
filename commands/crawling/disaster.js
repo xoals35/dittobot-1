@@ -3,7 +3,7 @@ const fetch = require("node-fetch");
 
 module.exports = {
     name: "disaster",
-    aliases: ["재난문자", "재난 문자", "안전 문자", "안전문자"],
+    aliases: ["재난문자", "안전문자", "wosksanswk", "dkswjsanswk", "얀ㅁㄴㅅㄷㄱ"],
     category: "crawling",
     run: async (client, message, args) => {
         const getJSON = await fetch('http://m.safekorea.go.kr/idsiSFK/neo/ext/json/disasterDataList/disasterDataList.json').then(res => res.json());

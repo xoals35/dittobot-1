@@ -13,7 +13,7 @@ module.exports = {
 
         if (!channel && args.join(" ")) {
             channel = message.guild.channels.cache.find(channel => {
-                return channel.name.toLowerCase().includes(args.join(" ")) || channel.name.tag.toLowerCase().includes(args.join(" "));
+                return channel.name.toLowerCase().includes(args.join(" "));
             });
         }
 
